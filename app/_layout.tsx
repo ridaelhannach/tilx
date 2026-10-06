@@ -1,14 +1,20 @@
-import { Stack } from 'expo-router';
+import { Stack, useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
+import { useShareIntent } from 'expo-share-intent';
 import { Colors, DarkColors } from '@/theme';
 import { initDb } from '@/database/db';
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const colors = colorScheme === 'dark' ? DarkColors : Colors;
+  const router = useRouter();
+
+  const { hasShareIntent, shareIntent, resetShareIntent, error } = useShareIntent({
+    disabled: false // Let it run in production APK
+  });
 
   useEffect(() => {
     try {
@@ -17,6 +23,26 @@ export default function RootLayout() {
       console.error('Failed to initialize local database:', e);
     }
   }, []);
+
+  // Global share intent listener
+  useEffect(() => {
+    if (hasShareIntent && shareIntent.value) {
+      // Find the first URL in the shared text
+      const urlMatch = shareIntent.value.match(/https?:\/\/[^\s]+/);
+      if (urlMatch) {
+        const extractedUrl = urlMatch[0];
+        
+        // Clear the intent so it doesn't trigger again on re-focus
+        resetShareIntent();
+
+        // Immediately trigger the card creation flow
+        router.push({
+          pathname: '/article/preview',
+          params: { url: extractedUrl }
+        });
+      }
+    }
+  }, [hasShareIntent, shareIntent, resetShareIntent, router]);
 
   return (
     <SafeAreaProvider>

@@ -13,7 +13,6 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router, useFocusEffect } from 'expo-router';
-import { useShareIntent } from 'expo-share-intent';
 import { Colors, DarkColors, Spacing, Typography, BorderRadius, Shadow, type AppColors } from '@/theme';
 import { getHistory, type SavedCard } from '@/database/db';
 
@@ -24,35 +23,6 @@ export default function HomeScreen() {
   const [urlError, setUrlError] = useState<string | null>(null);
   
   const [history, setHistory] = useState<SavedCard[]>([]);
-
-  const { hasShareIntent, shareIntent, resetShareIntent, error } = useShareIntent({
-    // Disable the native share intent hooks if running inside Expo Go,
-    // because Expo Go does not have the custom native code for Share Intents.
-    disabled: process.env.EXPO_OS === 'web' || !__DEV__ // We will just let it be enabled in dev build, but if it crashes, user can just use normal app
-  });
-
-  // Listen for incoming share intents
-  useFocusEffect(
-    useCallback(() => {
-      if (hasShareIntent && shareIntent.value) {
-        // Find the first URL in the shared text
-        const urlMatch = shareIntent.value.match(/https?:\/\/[^\s]+/);
-        if (urlMatch) {
-          const extractedUrl = urlMatch[0];
-          setUrl(extractedUrl);
-          
-          // Clear the intent so it doesn't trigger again on re-focus
-          resetShareIntent();
-
-          // Immediately trigger the card creation flow
-          router.push({
-            pathname: '/article/preview',
-            params: { url: extractedUrl }
-          });
-        }
-      }
-    }, [hasShareIntent, shareIntent, resetShareIntent])
-  );
 
   useFocusEffect(
     useCallback(() => {
