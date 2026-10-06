@@ -1,0 +1,104 @@
+{
+  "expo": {
+    "name": "Tilx",
+    "slug": "tilx",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.jpg",
+    "scheme": "tilx",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.plugarti.tilx"
+    },
+    "android": {
+      "package": "com.plugarti.tilx",
+      "predictiveBackGestureEnabled": false,
+      "intentFilters": [
+        {
+          "action": "android.intent.action.SEND",
+          "autoVerify": true,
+          "data": [
+            {
+              "mimeType": "text/plain"
+            }
+          ],
+          "category": [
+            "android.intent.category.DEFAULT"
+          ]
+        },
+        {
+          "action": "android.intent.action.SEND",
+          "autoVerify": true,
+          "data": [
+            {
+              "mimeType": "text/plain"
+            }
+          ],
+          "category": [
+            "android.intent.category.DEFAULT"
+          ]
+        }
+      ],
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/icon.jpg",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#0A0A0A"
+        }
+      ],
+      "expo-status-bar",
+      [
+        "expo-share-intent",
+        {
+          "ios": {
+            "bundleId": "com.plugarti.tilx.ShareExtension"
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "build": {
+          "experimental": {
+            "ios": {
+              "appExtensions": [
+                {
+                  "targetName": "ShareExtension",
+                  "bundleIdentifier": "com.plugarti.tilx.share-extension",
+                  "entitlements": {
+                    "com.apple.security.application-groups": [
+                      "group.com.plugarti.tilx"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "projectId": "7371d986-6b35-41c8-8f9e-c61733ec85e5"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/7371d986-6b35-41c8-8f9e-c61733ec85e5"
+    }
+  }
+}

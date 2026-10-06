@@ -1,0 +1,365 @@
+[debug] [2026-10-06T02:17:47.462Z] ----------------------------------------------------------------------
+[debug] [2026-10-06T02:17:47.469Z] Command:       C:\nvm4w\nodejs\node.exe C:\Users\Rida\AppData\Local\npm-cache\_npx\7750544ccf494d8b\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --project tilx-dev --only functions
+[debug] [2026-10-06T02:17:47.470Z] CLI Version:   15.32.1
+[debug] [2026-10-06T02:17:47.471Z] Platform:      win32
+[debug] [2026-10-06T02:17:47.471Z] Node Version:  v22.22.1
+[debug] [2026-10-06T02:17:47.471Z] Detected Agent: antigravity
+[debug] [2026-10-06T02:17:47.472Z] Time:          Mon Oct 05 2026 22:17:47 GMT-0400 (Eastern Daylight Time)
+[debug] [2026-10-06T02:17:47.472Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-10-06T02:17:47.497Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-10-06T02:18:28.472Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-10-06T02:18:28.472Z] > authorizing via signed-in user (elhannachus@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2026-10-06T02:18:28.493Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-10-06T02:18:28.494Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2026-10-06T02:18:28.633Z] Write emulator hub locator at C:\Users\Rida\AppData\Local\Temp\hub-tilx-dev.json
+[debug] [2026-10-06T02:18:28.716Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-10-06T02:18:28.717Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-10-06T02:18:28.717Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"0.0.0.0","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2026-10-06T02:18:28.900Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-10-06T02:18:28.900Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[warn] !  functions: Application Default Credentials detected. Non-emulated services will access production using these credentials. Be careful! {"metadata":{"emulator":{"name":"functions"},"message":"Application Default Credentials detected. Non-emulated services will access production using these credentials. Be careful!"}}
+[debug] [2026-10-06T02:18:35.704Z] Checked if tokens are valid: false, expires at: 1790810294276
+[debug] [2026-10-06T02:18:35.705Z] Checked if tokens are valid: false, expires at: 1790810294276
+[debug] [2026-10-06T02:18:35.705Z] > refreshing access token with scopes: []
+[debug] [2026-10-06T02:18:35.709Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-10-06T02:18:35.709Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-10-06T02:18:35.883Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-10-06T02:18:35.884Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-10-06T02:18:35.929Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/tilx-dev/adminSdkConfig [none]
+[debug] [2026-10-06T02:18:36.444Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/tilx-dev/adminSdkConfig 403
+[debug] [2026-10-06T02:18:36.444Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/tilx-dev/adminSdkConfig {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2026-10-06T02:18:36.445Z] Failed to get Admin SDK config for tilx-dev, falling back to cache Failed to get Admin SDK for Firebase project tilx-dev. Please make sure the project exists and your account has permission to access it. {"name":"FirebaseError","children":[],"exit":2,"message":"Failed to get Admin SDK for Firebase project tilx-dev. Please make sure the project exists and your account has permission to access it.","original":{"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}},"response":{"statusCode":403}},"exit":1,"message":"Request to https://firebase.googleapis.com/v1beta1/projects/tilx-dev/adminSdkConfig had HTTP Error: 403, The caller does not have permission","status":403},"status":500}
+[warn] !  functions: Unable to fetch project Admin SDK configuration, Admin SDK behavior in Cloud Functions emulator may be incorrect. {"metadata":{"emulator":{"name":"functions"},"message":"Unable to fetch project Admin SDK configuration, Admin SDK behavior in Cloud Functions emulator may be incorrect."}}
+[info] i  functions: Watching "C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions\" for Cloud Functions..."}}
+[debug] [2026-10-06T02:18:36.513Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-10-06T02:18:39.723Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Tilx Firebase Cloud Functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "lint": "eslint src --ext .ts"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.3.0",
+    "firebase-functions": "^6.0.1",
+    "node-fetch": "^2.7.0",
+    "htmlparser2": "^9.1.0",
+    "domhandler": "^5.0.3",
+    "css-select": "^5.1.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "eslint": "^8.56.0",
+    "eslint-config-google": "^0.14.0",
+    "typescript": "^5.4.5",
+    "@types/node": "^20.14.0",
+    "@types/node-fetch": "^2.6.11",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2026-10-06T02:18:39.724Z] Building nodejs source
+[debug] [2026-10-06T02:18:39.725Z] Failed to find version of module node: reached end of search path C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions\node_modules
+[warn] !  functions: Your requested "node" version "20" doesn't match your global version "22". Using node@22 from host. 
+[debug] [2026-10-06T02:18:39.731Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-10-06T02:18:39.750Z] Found firebase-functions binary at 'C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8171
+
+[error] !!  functions: Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification. Timeout after 10000. See https://firebase.google.com/docs/functions/tips#avoid_deployment_timeouts_during_initialization' {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: User code failed to load. Cannot determine backend specification. Timeout after 10000. See https://firebase.google.com/docs/functions/tips#avoid_deployment_timeouts_during_initialization'"}}
+[debug] [2026-10-06T02:18:53.543Z] Could not find VSCode notification endpoint: TypeError: fetch failed. If you are not running the Firebase SQL Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬──────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port    │ View in Emulator UI             │
+├───────────┼──────────────┼─────────────────────────────────┤
+│ Functions │ 0.0.0.0:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴──────────────┴─────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2026-10-06T02:21:41.391Z] [work-queue] {"queuedWork":["/tilx-dev/us-central1/articleMetadata-2026-10-06T02:21:41.389Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2026-10-06T02:21:41.395Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/tilx-dev/us-central1/articleMetadata-2026-10-06T02:21:41.389Z"],"workRunningCount":1}
+[debug] [2026-10-06T02:21:41.422Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2026-10-06T03:02:09.779Z] File C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions\src\index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions\\src\\index.ts changed, reloading triggers"}}
+[debug] [2026-10-06T03:02:09.929Z] File C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions\package.json changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions\\package.json changed, reloading triggers"}}
+[debug] [2026-10-06T03:02:10.952Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-10-06T03:02:13.092Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Tilx Firebase Cloud Functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "lint": "eslint src --ext .ts"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.3.0",
+    "firebase-functions": "^6.0.1",
+    "node-fetch": "^2.7.0",
+    "htmlparser2": "^9.1.0",
+    "domhandler": "^5.0.3",
+    "css-select": "^5.1.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "eslint": "^8.56.0",
+    "eslint-config-google": "^0.14.0",
+    "typescript": "^5.4.5",
+    "@types/node": "^20.14.0",
+    "@types/node-fetch": "^2.6.11",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2026-10-06T03:02:13.092Z] Building nodejs source
+[debug] [2026-10-06T03:02:13.093Z] Failed to find version of module node: reached end of search path C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions\node_modules
+[warn] !  functions: Your requested "node" version "20" doesn't match your global version "22". Using node@22 from host. 
+[debug] [2026-10-06T03:02:13.101Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-10-06T03:02:13.127Z] Found firebase-functions binary at 'C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8659
+
+[debug] [2026-10-06T03:02:14.613Z] Got response from /__/functions.yaml {"endpoints":{"articleMetadata":{"availableMemoryMb":256,"timeoutSeconds":30,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"articleMetadata"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] +  functions: Loaded functions definitions from source: articleMetadata. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: articleMetadata."}}
+[info] +  functions[us-central1-articleMetadata]: http function initialized (http://127.0.0.1:5001/tilx-dev/us-central1/articleMetadata). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/tilx-dev/us-central1/articleMetadata)."}}
+[debug] [2026-10-06T03:02:26.616Z] File C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions\lib\metadataParser.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions\\lib\\metadataParser.js.map changed, reloading triggers"}}
+[debug] [2026-10-06T03:02:26.616Z] File C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions\lib\metadataParser.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions\\lib\\metadataParser.js changed, reloading triggers"}}
+[debug] [2026-10-06T03:02:26.619Z] File C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions\lib\urlValidator.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions\\lib\\urlValidator.js.map changed, reloading triggers"}}
+[debug] [2026-10-06T03:02:26.623Z] File C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions\lib\urlValidator.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions\\lib\\urlValidator.js changed, reloading triggers"}}
+[debug] [2026-10-06T03:02:26.659Z] File C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions\lib\articleMetadata.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions\\lib\\articleMetadata.js.map changed, reloading triggers"}}
+[debug] [2026-10-06T03:02:26.668Z] File C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions\lib\articleMetadata.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions\\lib\\articleMetadata.js changed, reloading triggers"}}
+[debug] [2026-10-06T03:02:26.678Z] File C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions\lib\index.js.map changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions\\lib\\index.js.map changed, reloading triggers"}}
+[debug] [2026-10-06T03:02:26.685Z] File C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions\lib\index.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions\\lib\\index.js changed, reloading triggers"}}
+[debug] [2026-10-06T03:02:27.693Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-10-06T03:02:29.303Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Tilx Firebase Cloud Functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "lint": "eslint src --ext .ts"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.3.0",
+    "firebase-functions": "^6.0.1",
+    "node-fetch": "^2.7.0",
+    "htmlparser2": "^9.1.0",
+    "domhandler": "^5.0.3",
+    "css-select": "^5.1.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "eslint": "^8.56.0",
+    "eslint-config-google": "^0.14.0",
+    "typescript": "^5.4.5",
+    "@types/node": "^20.14.0",
+    "@types/node-fetch": "^2.6.11",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2026-10-06T03:02:29.303Z] Building nodejs source
+[debug] [2026-10-06T03:02:29.303Z] Failed to find version of module node: reached end of search path C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions\node_modules
+[warn] !  functions: Your requested "node" version "20" doesn't match your global version "22". Using node@22 from host. 
+[debug] [2026-10-06T03:02:29.304Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-10-06T03:02:29.321Z] Found firebase-functions binary at 'C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8410
+
+[debug] [2026-10-06T03:02:30.141Z] Got response from /__/functions.yaml {"endpoints":{"articleMetadata":{"availableMemoryMb":256,"timeoutSeconds":30,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"articleMetadata"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2026-10-06T03:02:51.456Z] ----------------------------------------------------------------------
+[debug] [2026-10-06T03:02:51.459Z] Command:       C:\nvm4w\nodejs\node.exe C:\Users\Rida\AppData\Local\npm-cache\_npx\7750544ccf494d8b\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --project tilx-dev --only functions
+[debug] [2026-10-06T03:02:51.460Z] CLI Version:   15.32.1
+[debug] [2026-10-06T03:02:51.460Z] Platform:      win32
+[debug] [2026-10-06T03:02:51.460Z] Node Version:  v22.22.1
+[debug] [2026-10-06T03:02:51.461Z] Detected Agent: antigravity
+[debug] [2026-10-06T03:02:51.461Z] Time:          Mon Oct 05 2026 23:02:51 GMT-0400 (Eastern Daylight Time)
+[debug] [2026-10-06T03:02:51.461Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-10-06T03:02:54.194Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-10-06T03:02:54.196Z] > authorizing via signed-in user (elhannachus@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2026-10-06T03:02:54.218Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-10-06T03:02:54.218Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2026-10-06T03:02:54.252Z] Found emulator hub locator: {"version":"15.32.1","origins":["http://127.0.0.1:4400","http://[::1]:4400"],"pid":22820}
+[debug] [2026-10-06T03:02:54.259Z] Write emulator hub locator at C:\Users\Rida\AppData\Local\Temp\hub-tilx-dev.json
+[debug] [2026-10-06T03:02:54.283Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-10-06T03:02:54.284Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-10-06T03:02:54.284Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"0.0.0.0","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect\u001b[22m"}}
+[warn] !  functions: Application Default Credentials detected. Non-emulated services will access production using these credentials. Be careful! {"metadata":{"emulator":{"name":"functions"},"message":"Application Default Credentials detected. Non-emulated services will access production using these credentials. Be careful!"}}
+[debug] [2026-10-06T03:02:57.073Z] Checked if tokens are valid: true, expires at: 1791256714884
+[debug] [2026-10-06T03:02:57.073Z] Checked if tokens are valid: true, expires at: 1791256714884
+[debug] [2026-10-06T03:02:57.076Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/tilx-dev/adminSdkConfig [none]
+[debug] [2026-10-06T03:02:57.442Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/tilx-dev/adminSdkConfig 403
+[debug] [2026-10-06T03:02:57.442Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/tilx-dev/adminSdkConfig {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2026-10-06T03:02:57.443Z] Failed to get Admin SDK config for tilx-dev, falling back to cache Failed to get Admin SDK for Firebase project tilx-dev. Please make sure the project exists and your account has permission to access it. {"name":"FirebaseError","children":[],"exit":2,"message":"Failed to get Admin SDK for Firebase project tilx-dev. Please make sure the project exists and your account has permission to access it.","original":{"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}},"response":{"statusCode":403}},"exit":1,"message":"Request to https://firebase.googleapis.com/v1beta1/projects/tilx-dev/adminSdkConfig had HTTP Error: 403, The caller does not have permission","status":403},"status":500}
+[warn] !  functions: Unable to fetch project Admin SDK configuration, Admin SDK behavior in Cloud Functions emulator may be incorrect. {"metadata":{"emulator":{"name":"functions"},"message":"Unable to fetch project Admin SDK configuration, Admin SDK behavior in Cloud Functions emulator may be incorrect."}}
+[info] i  functions: Watching "C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions\" for Cloud Functions..."}}
+[debug] [2026-10-06T03:02:57.500Z] Validating nodejs source
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-10-06T03:02:58.635Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Tilx Firebase Cloud Functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "lint": "eslint src --ext .ts"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.3.0",
+    "firebase-functions": "^6.0.1",
+    "node-fetch": "^2.7.0",
+    "htmlparser2": "^9.1.0",
+    "domhandler": "^5.0.3",
+    "css-select": "^5.1.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "eslint": "^8.56.0",
+    "eslint-config-google": "^0.14.0",
+    "typescript": "^5.4.5",
+    "@types/node": "^20.14.0",
+    "@types/node-fetch": "^2.6.11",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2026-10-06T03:02:58.636Z] Building nodejs source
+[debug] [2026-10-06T03:02:58.637Z] Failed to find version of module node: reached end of search path C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions\node_modules
+[info] +  functions: Using node@22 from host. 
+[debug] [2026-10-06T03:02:58.641Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-10-06T03:02:58.663Z] Found firebase-functions binary at 'C:\Users\Rida\Documents\antigravity\intelligent-oppenheimer\tilx\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8953
+
+[debug] [2026-10-06T03:02:59.598Z] Got response from /__/functions.yaml {"endpoints":{"articleMetadata":{"availableMemoryMb":256,"timeoutSeconds":30,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"articleMetadata"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] +  functions: Loaded functions definitions from source: articleMetadata. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: articleMetadata."}}
+[info] +  functions[us-central1-articleMetadata]: http function initialized (http://127.0.0.1:5001/tilx-dev/us-central1/articleMetadata). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/tilx-dev/us-central1/articleMetadata)."}}
+[debug] [2026-10-06T03:03:02.674Z] Could not find VSCode notification endpoint: TypeError: fetch failed. If you are not running the Firebase SQL Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬──────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port    │ View in Emulator UI             │
+├───────────┼──────────────┼─────────────────────────────────┤
+│ Functions │ 0.0.0.0:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴──────────────┴─────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2026-10-06T03:03:41.211Z] [work-queue] {"queuedWork":["/tilx-dev/us-central1/articleMetadata/article/metadata-2026-10-06T03:03:41.211Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2026-10-06T03:03:41.212Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/tilx-dev/us-central1/articleMetadata/article/metadata-2026-10-06T03:03:41.211Z"],"workRunningCount":1}
+[debug] [2026-10-06T03:03:41.212Z] Accepted request POST /tilx-dev/us-central1/articleMetadata/article/metadata --> us-central1-articleMetadata
+[debug] [2026-10-06T03:03:41.214Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2026-10-06T03:03:41.214Z] [functions] Got req.url=/tilx-dev/us-central1/articleMetadata/article/metadata, mapping to path=/article/metadata {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/tilx-dev/us-central1/articleMetadata/article/metadata, mapping to path=/article/metadata"}}
+[debug] [2026-10-06T03:03:41.233Z] [worker-pool] addWorker(us-central1-articleMetadata) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-articleMetadata)"}}
+[debug] [2026-10-06T03:03:41.233Z] [worker-pool] Adding worker with key us-central1-articleMetadata, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-articleMetadata, total=1"}}
+[info] >  (node:9844) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead. {"user":"(node:9844) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"\u001b[90m> \u001b[39m (node:9844) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead."}}
+[info] >  (Use `node --trace-deprecation ...` to show where the warning was created) {"user":"(Use `node --trace-deprecation ...` to show where the warning was created)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"\u001b[90m> \u001b[39m (Use `node --trace-deprecation ...` to show where the warning was created)"}}
+[debug] [2026-10-06T03:03:43.047Z] [runtime-status] [9844] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"[runtime-status] [9844] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"C:\\\\Users\\\\Rida\\\\Documents\\\\antigravity\\\\intelligent-oppenheimer\\\\tilx\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2026-10-06T03:03:43.049Z] [runtime-status] [9844] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions\\node_modules\\firebase-functions\\lib\\v2\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"[runtime-status] [9844] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"C:\\\\Users\\\\Rida\\\\Documents\\\\antigravity\\\\intelligent-oppenheimer\\\\tilx\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v2\\\\index.js\"}"}}
+[debug] [2026-10-06T03:03:43.050Z] [runtime-status] [9844] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"[runtime-status] [9844] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2026-10-06T03:03:43.052Z] [runtime-status] [9844] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions\\node_modules\\firebase-functions\\lib\\v2\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"[runtime-status] [9844] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"C:\\\\Users\\\\Rida\\\\Documents\\\\antigravity\\\\intelligent-oppenheimer\\\\tilx\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v2\\\\index.js\"}"}}
+[debug] [2026-10-06T03:03:43.400Z] [runtime-status] [9844] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions\\node_modules\\firebase-admin\\lib\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"[runtime-status] [9844] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"C:\\\\Users\\\\Rida\\\\Documents\\\\antigravity\\\\intelligent-oppenheimer\\\\tilx\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}"}}
+[debug] [2026-10-06T03:03:43.404Z] [runtime-status] [9844] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions\\node_modules\\firebase-functions\\lib\\v2\\index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"[runtime-status] [9844] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"C:\\\\Users\\\\Rida\\\\Documents\\\\antigravity\\\\intelligent-oppenheimer\\\\tilx\\\\functions\\\\node_modules\\\\firebase-functions\\\\lib\\\\v2\\\\index.js\"}"}}
+[debug] [2026-10-06T03:03:46.987Z] [runtime-status] [9844] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"12.7.0","resolution":"C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions\\node_modules\\firebase-admin\\lib\\index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"[runtime-status] [9844] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"C:\\\\Users\\\\Rida\\\\Documents\\\\antigravity\\\\intelligent-oppenheimer\\\\tilx\\\\functions\\\\node_modules\\\\firebase-admin\\\\lib\\\\index.js\"}}"}}
+[debug] [2026-10-06T03:03:47.001Z] [runtime-status] [9844] initializeApp(DEFAULT) {"storageBucket":"tilx-dev.appspot.com","databaseURL":"https://tilx-dev.firebaseio.com","projectId":"tilx-dev"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"[runtime-status] [9844] initializeApp(DEFAULT) {\"storageBucket\":\"tilx-dev.appspot.com\",\"databaseURL\":\"https://tilx-dev.firebaseio.com\",\"projectId\":\"tilx-dev\"}"}}
+[debug] [2026-10-06T03:03:47.099Z] [runtime-status] [9844] Functions runtime initialized. {"cwd":"C:\\Users\\Rida\\Documents\\antigravity\\intelligent-oppenheimer\\tilx\\functions","node_version":"22.22.1"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"[runtime-status] [9844] Functions runtime initialized. {\"cwd\":\"C:\\\\Users\\\\Rida\\\\Documents\\\\antigravity\\\\intelligent-oppenheimer\\\\tilx\\\\functions\",\"node_version\":\"22.22.1\"}"}}
+[debug] [2026-10-06T03:03:47.100Z] [runtime-status] [9844] Listening to port: \\?\pipe\fire_emu_a0c7699406f8a919 {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"[runtime-status] [9844] Listening to port: \\\\?\\pipe\\fire_emu_a0c7699406f8a919"}}
+[debug] [2026-10-06T03:03:47.227Z] [worker-us-central1-articleMetadata-231352c3-3974-43cb-ad98-26cded573655]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"[worker-us-central1-articleMetadata-231352c3-3974-43cb-ad98-26cded573655]: IDLE"}}
+[debug] [2026-10-06T03:03:47.228Z] [worker-pool] submitRequest(triggerId=us-central1-articleMetadata) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-articleMetadata)"}}
+[info] i  functions: Beginning execution of "us-central1-articleMetadata" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"Beginning execution of \"us-central1-articleMetadata\""}}
+[debug] [2026-10-06T03:03:47.229Z] [worker-us-central1-articleMetadata-231352c3-3974-43cb-ad98-26cded573655]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"[worker-us-central1-articleMetadata-231352c3-3974-43cb-ad98-26cded573655]: BUSY"}}
+[debug] [2026-10-06T03:03:47.760Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-articleMetadata" in 530.8683ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"Finished \"us-central1-articleMetadata\" in 530.8683ms"}}
+[debug] [2026-10-06T03:03:47.761Z] [worker-us-central1-articleMetadata-231352c3-3974-43cb-ad98-26cded573655]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"[worker-us-central1-articleMetadata-231352c3-3974-43cb-ad98-26cded573655]: IDLE"}}
+[debug] [2026-10-06T03:03:47.761Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2026-10-06T03:03:47.761Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2026-10-06T03:03:47.761Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2026-10-06T03:09:30.811Z] [work-queue] {"queuedWork":["/tilx-dev/us-central1/articleMetadata/article/metadata-2026-10-06T03:09:30.811Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2026-10-06T03:09:30.812Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/tilx-dev/us-central1/articleMetadata/article/metadata-2026-10-06T03:09:30.811Z"],"workRunningCount":1}
+[debug] [2026-10-06T03:09:30.812Z] Accepted request POST /tilx-dev/us-central1/articleMetadata/article/metadata --> us-central1-articleMetadata
+[debug] [2026-10-06T03:09:30.815Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2026-10-06T03:09:30.815Z] [functions] Got req.url=/tilx-dev/us-central1/articleMetadata/article/metadata, mapping to path=/article/metadata {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/tilx-dev/us-central1/articleMetadata/article/metadata, mapping to path=/article/metadata"}}
+[debug] [2026-10-06T03:09:30.815Z] [worker-pool] submitRequest(triggerId=us-central1-articleMetadata) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-articleMetadata)"}}
+[info] i  functions: Beginning execution of "us-central1-articleMetadata" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"Beginning execution of \"us-central1-articleMetadata\""}}
+[debug] [2026-10-06T03:09:30.816Z] [worker-us-central1-articleMetadata-231352c3-3974-43cb-ad98-26cded573655]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"[worker-us-central1-articleMetadata-231352c3-3974-43cb-ad98-26cded573655]: BUSY"}}
+[debug] [2026-10-06T03:09:31.014Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-articleMetadata" in 198.1038ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"Finished \"us-central1-articleMetadata\" in 198.1038ms"}}
+[debug] [2026-10-06T03:09:31.014Z] [worker-us-central1-articleMetadata-231352c3-3974-43cb-ad98-26cded573655]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"[worker-us-central1-articleMetadata-231352c3-3974-43cb-ad98-26cded573655]: IDLE"}}
+[debug] [2026-10-06T03:09:31.014Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2026-10-06T03:09:31.014Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2026-10-06T03:09:31.014Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2026-10-06T03:17:11.211Z] [work-queue] {"queuedWork":["/tilx-dev/us-central1/articleMetadata/article/metadata-2026-10-06T03:17:11.210Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2026-10-06T03:17:11.211Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/tilx-dev/us-central1/articleMetadata/article/metadata-2026-10-06T03:17:11.210Z"],"workRunningCount":1}
+[debug] [2026-10-06T03:17:11.211Z] Accepted request POST /tilx-dev/us-central1/articleMetadata/article/metadata --> us-central1-articleMetadata
+[debug] [2026-10-06T03:17:11.221Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2026-10-06T03:17:11.222Z] [functions] Got req.url=/tilx-dev/us-central1/articleMetadata/article/metadata, mapping to path=/article/metadata {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/tilx-dev/us-central1/articleMetadata/article/metadata, mapping to path=/article/metadata"}}
+[debug] [2026-10-06T03:17:11.222Z] [worker-pool] submitRequest(triggerId=us-central1-articleMetadata) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-articleMetadata)"}}
+[info] i  functions: Beginning execution of "us-central1-articleMetadata" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"Beginning execution of \"us-central1-articleMetadata\""}}
+[debug] [2026-10-06T03:17:11.223Z] [worker-us-central1-articleMetadata-231352c3-3974-43cb-ad98-26cded573655]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"[worker-us-central1-articleMetadata-231352c3-3974-43cb-ad98-26cded573655]: BUSY"}}
+[debug] [2026-10-06T03:17:11.406Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-articleMetadata" in 183.1932ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"Finished \"us-central1-articleMetadata\" in 183.1932ms"}}
+[debug] [2026-10-06T03:17:11.407Z] [worker-us-central1-articleMetadata-231352c3-3974-43cb-ad98-26cded573655]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"[worker-us-central1-articleMetadata-231352c3-3974-43cb-ad98-26cded573655]: IDLE"}}
+[debug] [2026-10-06T03:17:11.407Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2026-10-06T03:17:11.407Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-articleMetadata"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2026-10-06T03:17:11.407Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
