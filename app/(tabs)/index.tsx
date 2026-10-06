@@ -48,6 +48,9 @@ export default function CreateScreen() {
       return parsed.protocol === 'http:' || parsed.protocol === 'https:';
     } catch {
       return false;
+    }
+  };
+
   const handleCreateCard = useCallback(() => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     const trimmed = url.trim();
