@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router, useFocusEffect } from 'expo-router';
+import * as Haptics from 'expo-haptics';
 import { Link2 } from 'lucide-react-native';
 import { Colors, DarkColors, Spacing, Typography, BorderRadius, Shadow, type AppColors } from '@/theme';
 import { getHistory, type SavedCard } from '@/database/db';
@@ -47,10 +48,8 @@ export default function CreateScreen() {
       return parsed.protocol === 'http:' || parsed.protocol === 'https:';
     } catch {
       return false;
-    }
-  };
-
   const handleCreateCard = useCallback(() => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     const trimmed = url.trim();
     if (!trimmed) {
       setUrlError('Paste an article URL to start');

@@ -3,6 +3,7 @@ import { View, StyleSheet, TouchableOpacity, Text, useColorScheme, useWindowDime
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLocalSearchParams, router } from 'expo-router';
 import ViewShot from 'react-native-view-shot';
+import * as Haptics from 'expo-haptics';
 
 import * as Sharing from 'expo-sharing';
 import { Colors, DarkColors, Spacing, Typography, BorderRadius, type AppColors } from '@/theme';
@@ -50,6 +51,7 @@ export default function CardEditorScreen() {
         const uri = await viewShotRef.current.capture();
         if (article) {
           saveCardToHistory(article);
+          Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
           router.push({
             pathname: '/share',
             params: { 
@@ -114,7 +116,10 @@ export default function CardEditorScreen() {
                 <TouchableOpacity
                   key={tId}
                   style={styles.templateItem}
-                  onPress={() => setTemplate(tId)}
+                  onPress={() => {
+                    Haptics.selectionAsync();
+                    setTemplate(tId);
+                  }}
                   activeOpacity={0.8}
                 >
                   <View style={[styles.templatePreview, isSelected && styles.templatePreviewSelected]}>
