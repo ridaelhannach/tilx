@@ -27,18 +27,6 @@
           "category": [
             "android.intent.category.DEFAULT"
           ]
-        },
-        {
-          "action": "android.intent.action.SEND",
-          "autoVerify": true,
-          "data": [
-            {
-              "mimeType": "text/plain"
-            }
-          ],
-          "category": [
-            "android.intent.category.DEFAULT"
-          ]
         }
       ],
       "runtimeVersion": {
@@ -99,6 +87,9 @@
     },
     "updates": {
       "url": "https://u.expo.dev/7371d986-6b35-41c8-8f9e-c61733ec85e5"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }
