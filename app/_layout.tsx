@@ -26,9 +26,9 @@ export default function RootLayout() {
 
   // Global share intent listener
   useEffect(() => {
-    if (hasShareIntent && shareIntent.value) {
+    if (hasShareIntent && shareIntent && (shareIntent as any).value) {
       // Find the first URL in the shared text
-      const urlMatch = shareIntent.value.match(/https?:\/\/[^\s]+/);
+      const urlMatch = ((shareIntent as any).value as string).match(/https?:\/\/[^\s]+/);
       if (urlMatch) {
         const extractedUrl = urlMatch[0];
         
@@ -55,7 +55,7 @@ export default function RootLayout() {
           contentStyle: { backgroundColor: colors.surface },
         }}
       >
-        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen
           name="article/preview"
           options={{
@@ -79,12 +79,10 @@ export default function RootLayout() {
           }}
         />
         <Stack.Screen
-          name="history/index"
-          options={{ title: 'History' }}
-        />
-        <Stack.Screen
-          name="settings/index"
-          options={{ title: 'Settings' }}
+          name="share"
+          options={{
+            headerShown: false,
+          }}
         />
       </Stack>
     </SafeAreaProvider>

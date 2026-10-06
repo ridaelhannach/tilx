@@ -1,56 +1,118 @@
-// Core color palette for Tilx
+// Core color palette for Tilx as per PRD Section 5 & 6
 
-/** Shared type for passing either the light or dark color object to createStyles() */
-export type AppColors = Record<string, string>;
-
-export const Colors = {
+export interface AppColors {
+  background: string;
+  secondarySurface: string;
+  elevatedSurface: string;
+  primaryText: string;
+  secondaryText: string;
+  mutedText: string;
+  primaryBorder: string;
+  strongBorder: string;
+  primaryAction: string;
+  primaryActionText: string;
+  disabledSurface: string;
+  disabledText: string;
+  danger: string;
+  success: string;
   // Brand
-  primary: '#1A73E8',
-  primaryDark: '#0D47A1',
-  primaryLight: '#E8F0FE',
+  brandGradientStart: string;
+  brandGradientMid: string;
+  brandGradientEnd: string;
+  
+  // Legacy
+  white: string;
+  black: string;
+  grey50: string;
+  grey100: string;
+  grey200: string;
+  grey300: string;
+  grey400: string;
+  grey500: string;
+  grey600: string;
+  grey700: string;
+  grey800: string;
+  grey900: string;
+  primary: string;
+  primaryLight: string;
+  error: string;
+  surface: string;
+}
 
-  // Neutrals
-  black: '#0A0A0A',
+export const Colors: AppColors = {
+  background: '#FFFFFF',
+  secondarySurface: '#FAFAFA',
+  elevatedSurface: '#FFFFFF',
+  primaryText: '#111111',
+  secondaryText: '#737373',
+  mutedText: '#A0A0A0',
+  primaryBorder: '#E7E7E7',
+  strongBorder: '#D4D4D4',
+  primaryAction: '#111111',
+  primaryActionText: '#FFFFFF',
+  disabledSurface: '#F0F0F0',
+  disabledText: '#A8A8A8',
+  danger: '#D92D20',
+  success: '#16803A',
+  
+  brandGradientStart: '#FF4D74',
+  brandGradientMid: '#C840E9',
+  brandGradientEnd: '#705CFF',
+
+  // Legacy
   white: '#FFFFFF',
-  grey50: '#FAFAFA',
-  grey100: '#F5F5F5',
-  grey200: '#EEEEEE',
-  grey300: '#E0E0E0',
-  grey400: '#BDBDBD',
-  grey500: '#9E9E9E',
-  grey600: '#757575',
-  grey700: '#616161',
-  grey800: '#424242',
-  grey900: '#212121',
-
-  // Semantic
-  success: '#34A853',
-  error: '#EA4335',
-  warning: '#FBBC04',
-  info: '#1A73E8',
-
-  // Surface
+  black: '#000000',
+  grey50: '#F8FAFC',
+  grey100: '#F1F5F9',
+  grey200: '#E2E8F0',
+  grey300: '#CBD5E1',
+  grey400: '#94A3B8',
+  grey500: '#64748B',
+  grey600: '#475569',
+  grey700: '#334155',
+  grey800: '#1E293B',
+  grey900: '#0F172A',
+  primary: '#111111',
+  primaryLight: '#E8F0FE',
+  error: '#D92D20',
   surface: '#FFFFFF',
-  surfaceVariant: '#F5F5F5',
-  overlay: 'rgba(0,0,0,0.5)',
-} as const;
+};
 
-export const DarkColors = {
-  ...Colors,
-  surface: '#1A1A1A',
-  surfaceVariant: '#2C2C2C',
+export const DarkColors: AppColors = {
+  background: '#0B0B0B',
+  secondarySurface: '#151515',
+  elevatedSurface: '#1B1B1B',
+  primaryText: '#F7F7F7',
+  secondaryText: '#A8A8A8',
+  mutedText: '#777777',
+  primaryBorder: '#292929',
+  strongBorder: '#3A3A3A',
+  primaryAction: '#FFFFFF',
+  primaryActionText: '#111111',
+  disabledSurface: '#222222',
+  disabledText: '#555555',
+  danger: '#D92D20',
+  success: '#16803A',
+  
+  brandGradientStart: '#FF4D74',
+  brandGradientMid: '#C840E9',
+  brandGradientEnd: '#705CFF',
+
+  // Legacy
+  white: '#000000',
   black: '#FFFFFF',
-  white: '#0A0A0A',
-  grey50: '#1A1A1A',
-  grey100: '#2C2C2C',
-  grey200: '#3C3C3C',
-  grey300: '#4C4C4C',
-  grey400: '#6C6C6C',
-  grey500: '#8C8C8C',
-  grey600: '#ABABAB',
-  grey700: '#C0C0C0',
-  grey800: '#D5D5D5',
-  grey900: '#EFEFEF',
-} as const;
-
-export type ColorKey = keyof typeof Colors;
+  grey50: '#1E293B',
+  grey100: '#334155',
+  grey200: '#475569',
+  grey300: '#64748B',
+  grey400: '#94A3B8',
+  grey500: '#CBD5E1',
+  grey600: '#E2E8F0',
+  grey700: '#F1F5F9',
+  grey800: '#F8FAFC',
+  grey900: '#FFFFFF',
+  primary: '#FFFFFF',
+  primaryLight: '#2C2C2C',
+  error: '#D92D20',
+  surface: '#1A1A1A',
+};

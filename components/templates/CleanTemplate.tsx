@@ -1,116 +1,82 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, useColorScheme } from 'react-native';
-import { Colors, DarkColors, Spacing, Typography, BorderRadius, type AppColors } from '@/theme';
+import { View, Text, Image, StyleSheet } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import { Typography } from '@/theme';
 import type { Article } from '@/types';
 
 interface TemplateProps {
   article: Article;
 }
 
-/**
- * CleanTemplate: Minimalist, lots of whitespace, rounded borders.
- * Built to be rendered inside a 1:1 aspect ratio square.
- */
 export function CleanTemplate({ article }: TemplateProps) {
-  const colors = Colors; 
-  const styles = createStyles(colors);
-
   return (
     <View style={styles.container}>
-      <View style={styles.innerBox}>
-        {/* Top Source Badge */}
-        <View style={styles.header}>
-          <Text style={styles.sourceText}>{article.source.toUpperCase()}</Text>
-        </View>
+      {/* Full-bleed image */}
+      {article.imageUrl ? (
+        <Image source={{ uri: article.imageUrl }} style={styles.image} resizeMode="cover" />
+      ) : (
+        <View style={styles.imagePlaceholder} />
+      )}
 
-        {/* Main Content */}
-        <View style={styles.content}>
-          <Text style={styles.headline} numberOfLines={4}>
+      {/* Dark gradient overlay at the bottom */}
+      <LinearGradient
+        colors={['transparent', 'rgba(0,0,0,0.85)']}
+        locations={[0.2, 1]}
+        style={styles.gradient}
+      >
+        <View style={styles.contentContainer}>
+          <Text style={styles.headline} numberOfLines={4} adjustsFontSizeToFit>
             {article.title}
           </Text>
-          {article.description && (
-            <Text style={styles.description} numberOfLines={3}>
-              {article.description}
-            </Text>
-          )}
+          <Text style={styles.source}>
+            {article.source.toUpperCase() || article.domain.toUpperCase()}
+          </Text>
         </View>
-
-        {/* Image Block */}
-        {article.imageUrl ? (
-          <View style={styles.imageContainer}>
-            <Image
-              source={{ uri: article.imageUrl }}
-              style={styles.image}
-              resizeMode="cover"
-            />
-          </View>
-        ) : (
-          <View style={styles.placeholderContainer} />
-        )}
-      </View>
+      </LinearGradient>
     </View>
   );
 }
 
-function createStyles(colors: AppColors) {
-  return StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#F3F4F6', // light grey background
-      padding: 60,
-    },
-    innerBox: {
-      flex: 1,
-      backgroundColor: colors.white,
-      borderRadius: 40,
-      padding: 60,
-      justifyContent: 'space-between',
-      shadowColor: '#000',
-      shadowOffset: { width: 0, height: 20 },
-      shadowOpacity: 0.1,
-      shadowRadius: 40,
-      elevation: 10,
-    },
-    header: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      marginBottom: 30,
-    },
-    sourceText: {
-      fontSize: 28,
-      fontWeight: 'bold',
-      color: colors.primary,
-      letterSpacing: 2,
-    },
-    content: {
-      flex: 1,
-      justifyContent: 'center',
-      paddingBottom: 40,
-    },
-    headline: {
-      fontSize: 64,
-      fontWeight: 'bold',
-      color: colors.black,
-      lineHeight: 76,
-      marginBottom: 20,
-    },
-    description: {
-      fontSize: 32,
-      color: colors.grey600,
-      lineHeight: 44,
-    },
-    imageContainer: {
-      height: 400,
-      width: '100%',
-      borderRadius: 24,
-      overflow: 'hidden',
-    },
-    image: {
-      width: '100%',
-      height: '100%',
-    },
-    placeholderContainer: {
-      height: 40,
-    },
-  });
-}
+const styles = StyleSheet.create({
+  container: {
+    width: 1080,
+    height: 1080,
+    backgroundColor: '#000000',
+    position: 'relative',
+    overflow: 'hidden',
+  },
+  image: {
+    position: 'absolute', top: 0, bottom: 0, left: 0, right: 0,
+    width: 1080,
+    height: 1080,
+  },
+  imagePlaceholder: {
+    position: 'absolute', top: 0, bottom: 0, left: 0, right: 0,
+    backgroundColor: '#1E1E1E',
+  },
+  gradient: {
+    position: 'absolute', top: 0, bottom: 0, left: 0, right: 0,
+    justifyContent: 'flex-end',
+    padding: 80,
+  },
+  contentContainer: {
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+  },
+  headline: {
+    color: '#FFFFFF',
+    fontSize: 72,
+    fontWeight: '700',
+    lineHeight: 84,
+    marginBottom: 40,
+    textShadowColor: 'rgba(0, 0, 0, 0.4)',
+    textShadowOffset: { width: 0, height: 2 },
+    textShadowRadius: 8,
+  },
+  source: {
+    color: 'rgba(255, 255, 255, 0.8)',
+    fontSize: 28,
+    fontWeight: '600',
+    letterSpacing: 2,
+  },
+});

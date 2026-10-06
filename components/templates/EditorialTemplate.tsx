@@ -1,113 +1,87 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-import { Colors, Spacing, Typography, type AppColors } from '@/theme';
 import type { Article } from '@/types';
 
 interface TemplateProps {
   article: Article;
 }
 
-/**
- * EditorialTemplate: Newspaper style, serif-inspired layout, compact lines.
- */
 export function EditorialTemplate({ article }: TemplateProps) {
-  const colors = Colors;
-  const styles = createStyles(colors);
-
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <View style={styles.divider} />
-        <Text style={styles.sourceText}>{article.source}</Text>
-        <View style={styles.divider} />
+      {/* Top Image (60%) */}
+      <View style={styles.imageSection}>
+        {article.imageUrl ? (
+          <Image source={{ uri: article.imageUrl }} style={styles.image} resizeMode="cover" />
+        ) : (
+          <View style={styles.imagePlaceholder} />
+        )}
       </View>
 
-      <View style={styles.mainLayout}>
-        {/* Top/Left Text */}
-        <View style={styles.leftCol}>
-          <Text style={styles.headline} numberOfLines={4}>
-            {article.title}
+      {/* Bottom Content (40%) */}
+      <View style={styles.contentSection}>
+        <Text style={styles.source}>
+          {article.source.toUpperCase() || article.domain.toUpperCase()}
+        </Text>
+        <Text style={styles.headline} numberOfLines={3} adjustsFontSizeToFit>
+          {article.title}
+        </Text>
+        {article.description && (
+          <Text style={styles.description} numberOfLines={3}>
+            {article.description}
           </Text>
-          {article.description && (
-            <Text style={styles.description} numberOfLines={4}>
-              {article.description}
-            </Text>
-          )}
-        </View>
-
-        {/* Right Image */}
-        {article.imageUrl && (
-          <View style={styles.rightCol}>
-            <Image
-              source={{ uri: article.imageUrl }}
-              style={styles.image}
-              resizeMode="cover"
-            />
-          </View>
         )}
       </View>
     </View>
   );
 }
 
-function createStyles(colors: AppColors) {
-  return StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#f4efe6', // Warm newspaper cream tint
-      padding: 60,
-      borderWidth: 16,
-      borderColor: colors.black,
-    },
-    header: {
-      alignItems: 'center',
-      marginBottom: 60,
-    },
-    sourceText: {
-      fontSize: 28,
-      fontWeight: 'bold',
-      color: colors.black,
-      textTransform: 'uppercase',
-      letterSpacing: 8,
-      marginVertical: 20,
-      textAlign: 'center',
-    },
-    divider: {
-      height: 4,
-      backgroundColor: colors.black,
-      width: '100%',
-    },
-    mainLayout: {
-      flex: 1,
-      flexDirection: 'row',
-      gap: 40,
-    },
-    leftCol: {
-      flex: 1,
-      justifyContent: 'center',
-    },
-    rightCol: {
-      width: '45%',
-      height: '100%',
-    },
-    headline: {
-      fontSize: 60,
-      fontWeight: '800',
-      color: colors.black,
-      lineHeight: 70,
-      marginBottom: 30,
-    },
-    description: {
-      fontSize: 32,
-      color: '#444',
-      lineHeight: 46,
-      fontStyle: 'italic',
-    },
-    image: {
-      width: '100%',
-      height: '100%',
-      borderWidth: 4,
-      borderColor: colors.black,
-    },
-  });
-}
+const styles = StyleSheet.create({
+  container: {
+    width: 1080,
+    height: 1080,
+    backgroundColor: '#FAFAFA',
+    overflow: 'hidden',
+  },
+  imageSection: {
+    height: '55%',
+    width: '100%',
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+  },
+  imagePlaceholder: {
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#E7E7E7',
+  },
+  contentSection: {
+    height: '45%',
+    width: '100%',
+    paddingHorizontal: 80,
+    paddingTop: 60,
+    paddingBottom: 60,
+    justifyContent: 'flex-start',
+  },
+  source: {
+    color: '#D92D20', // Subtle editorial accent red
+    fontSize: 24,
+    fontWeight: '700',
+    letterSpacing: 2,
+    marginBottom: 32,
+  },
+  headline: {
+    color: '#111111',
+    fontSize: 64,
+    fontWeight: '700',
+    lineHeight: 76,
+    marginBottom: 32,
+  },
+  description: {
+    color: '#737373',
+    fontSize: 32,
+    fontWeight: '400',
+    lineHeight: 46,
+  },
+});

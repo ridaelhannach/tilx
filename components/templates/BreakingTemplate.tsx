@@ -1,88 +1,94 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-import { Colors, Spacing, Typography, type AppColors } from '@/theme';
 import type { Article } from '@/types';
 
 interface TemplateProps {
   article: Article;
 }
 
-/**
- * BreakingTemplate: Bold, high contrast, big headlines.
- */
 export function BreakingTemplate({ article }: TemplateProps) {
-  const colors = Colors;
-  const styles = createStyles(colors);
-
   return (
     <View style={styles.container}>
-      {article.imageUrl && (
-        <Image
-          source={{ uri: article.imageUrl }}
-          style={StyleSheet.absoluteFill}
-          resizeMode="cover"
-        />
+      {/* Full-bleed image */}
+      {article.imageUrl ? (
+        <Image source={{ uri: article.imageUrl }} style={styles.image} resizeMode="cover" />
+      ) : (
+        <View style={styles.imagePlaceholder} />
       )}
-      
-      {/* Dark overlay for contrast */}
-      <View style={styles.overlay} />
 
-      <View style={styles.content}>
-        <View style={styles.badge}>
-          <Text style={styles.badgeText}>BREAKING</Text>
+      {/* Strong dark overlay everywhere */}
+      <View style={styles.overlay}>
+        <View style={styles.contentContainer}>
+          <View style={styles.accentBadge}>
+            <Text style={styles.accentBadgeText}>BREAKING</Text>
+          </View>
+          <Text style={styles.headline} numberOfLines={4} adjustsFontSizeToFit>
+            {article.title}
+          </Text>
+          <Text style={styles.source}>
+            {article.source.toUpperCase() || article.domain.toUpperCase()}
+          </Text>
         </View>
-
-        <Text style={styles.sourceText}>{article.source}</Text>
-
-        <Text style={styles.headline} numberOfLines={5}>
-          {article.title}
-        </Text>
       </View>
     </View>
   );
 }
 
-function createStyles(colors: AppColors) {
-  return StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: colors.black,
-    },
-    overlay: {
-      ...StyleSheet.absoluteFill,
-      backgroundColor: 'rgba(0,0,0,0.6)', // darker overlay for better contrast
-    },
-    content: {
-      flex: 1,
-      justifyContent: 'flex-end',
-      padding: 60,
-    },
-    badge: {
-      backgroundColor: '#E53935', // Red for breaking news
-      alignSelf: 'flex-start',
-      paddingVertical: 12,
-      paddingHorizontal: 24,
-      marginBottom: 30,
-    },
-    badgeText: {
-      color: colors.white,
-      fontWeight: '900',
-      fontSize: 28,
-      letterSpacing: 4,
-    },
-    sourceText: {
-      fontSize: 32,
-      fontWeight: 'bold',
-      color: '#E5E7EB',
-      marginBottom: 20,
-      textTransform: 'uppercase',
-      letterSpacing: 2,
-    },
-    headline: {
-      fontSize: 72,
-      fontWeight: '900',
-      color: colors.white,
-      lineHeight: 84,
-    },
-  });
-}
+const styles = StyleSheet.create({
+  container: {
+    width: 1080,
+    height: 1080,
+    backgroundColor: '#000000',
+    position: 'relative',
+    overflow: 'hidden',
+  },
+  image: {
+    position: 'absolute', top: 0, bottom: 0, left: 0, right: 0,
+    width: 1080,
+    height: 1080,
+  },
+  imagePlaceholder: {
+    position: 'absolute', top: 0, bottom: 0, left: 0, right: 0,
+    backgroundColor: '#1E1E1E',
+  },
+  overlay: {
+    position: 'absolute', top: 0, bottom: 0, left: 0, right: 0,
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    padding: 80,
+    justifyContent: 'center', // Center content vertically for impact
+  },
+  contentContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  accentBadge: {
+    backgroundColor: '#FF4D74', // SocialCard brand pink/coral
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    borderRadius: 8,
+    marginBottom: 40,
+  },
+  accentBadgeText: {
+    color: '#FFFFFF',
+    fontSize: 28,
+    fontWeight: '800',
+    letterSpacing: 3,
+  },
+  headline: {
+    color: '#FFFFFF',
+    fontSize: 80,
+    fontWeight: '800',
+    lineHeight: 92,
+    textAlign: 'center',
+    marginBottom: 48,
+    textTransform: 'uppercase',
+  },
+  source: {
+    color: 'rgba(255, 255, 255, 0.7)',
+    fontSize: 24,
+    fontWeight: '600',
+    letterSpacing: 2,
+    textAlign: 'center',
+  },
+});
